@@ -1,4 +1,4 @@
-<%= form_for(@restaurant) do |f| %>
+<%= form_for(@restaurant, html: { multipart: true }) do |f| %>
   <% if @restaurant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
@@ -12,22 +12,27 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+    <%= f.text_field :name, autofocus: true, placeholder: 'Name', class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :address %><br>
-    <%= f.text_field :address, class: 'form-control' %>
+    <%= f.text_field :address,placeholder: 'Address', class: 'form-control' %>
+  </div>
+  <div class="row">
+  <div class="col-sm-12 col-md-6">
+  <div class="form-group">
+    <%= f.text_field :phone, placeholder: 'Mobile Number', class: 'form-control' %>
+  </div>
+  </div>
+  <div class="col-sm-12 col-md-6">
+  <div class="form-group">
+    <%= f.text_field :website, placeholder: 'Website', class: 'form-control' %>
+  </div>
+  </div>
   </div>
   <div class="form-group">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :website %><br>
-    <%= f.text_field :website, class: 'form-control' %>
+    <%= f.file_field :image, class: 'form-control' %>
   </div>
   <div class="actions">
-    <%= f.submit class: 'btn btn-primary' %>
+    <%= f.submit class: 'btn btn-primary btn-block' %>
   </div>
 <% end %>

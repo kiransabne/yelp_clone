@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
+<div class="row">
+<div class="col-sm-12 col-md-6 col-md-offset-3">
+ <div class="panel panel-default">
+  <div class="panel-body">
+  <%= image_tag @restaurant.image_url, class: 'center-block' %>
+  <p></p>
+  <p>
+  <strong>Name:</strong><br>
   <%= @restaurant.name %>
 </p>
-
 <p>
-  <strong>Address:</strong>
+  <strong>Address:</strong><br>
   <%= @restaurant.address %>
 </p>
-
 <p>
-  <strong>Phone:</strong>
+  <strong>Phone:</strong><br>
   <%= @restaurant.phone %>
 </p>
-
-<p>
-  <strong>Website:</strong>
+ 	<p>
+  <strong>Website:</strong><br>
   <%= @restaurant.website %>
-</p>
-
+   </p>
+  </div>
+</div>
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: 'btn btn-link' %> |
 <%= link_to 'Back', restaurants_path, class: 'btn btn-link' %>
+</div>
+</div>
